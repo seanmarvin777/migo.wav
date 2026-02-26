@@ -63,7 +63,7 @@ body {
 .hero h1 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 900;
-    font-size: clamp(3.5rem, 12vw, 7rem);
+    font-size: clamp(3.5rem, 23vw, 12rem);
     letter-spacing: 0.18em;
     color: rgba(255,255,255,0.5);
     text-transform: uppercase;
@@ -109,25 +109,68 @@ body {
     border: 2px solid var(--gold);
 }
 
-/* - soundcloud player - */
-.soundcloud-embed {
-  margin-top: 36px;
-  max-width: 680px;
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  overflow: hidden;
-  box-shadow: 0 0 0 6px var(--dark);
-  transition: border-color 0.2s;
-}
-
-.soundcloud-embed:hover {
-  border-color: var(--gold);
-}
-
 .btn-primary { background: var(--gold); color: #000; }
 .btn-primary:hover { background: #e5bf6a; border-color: #e5bf6a; }
 .btn-outline { background: transparent; color: var(--gold); }
 .btn-outline:hover { background: var(--gold); color: #000; }
+
+/* PHOTO SLIDER */
+.photos {
+  background: var(--dark);
+}
+
+.slider-wrapper {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.slider-dots {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.dot.active {
+  background: var(--gold);
+}
+
 
 /* - Sections - */
 
@@ -170,6 +213,21 @@ section { padding: 80px 24px; }
     line-height: 1.9;
 }
 
+/* - soundcloud player - */
+.soundcloud-embed {
+  margin-top: 36px;
+  max-width: 680px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 0 0 6px var(--dark);
+  transition: border-color 0.2s;
+}
+
+.soundcloud-embed:hover {
+  border-color: var(--gold);
+}
+
 /* - genres - */
 .genres { background: #111;}
 
@@ -210,12 +268,12 @@ section { padding: 80px 24px; }
 
 @media (max-width: 640px) {
     .hero {
-        background-size: 265%;
+        background-size: 250%; /* zoom in more for small screens */
         background-position: center center;
     }
     
     .two-col {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* your existing rule */
     }
 }
 
