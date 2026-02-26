@@ -109,6 +109,21 @@ body {
     border: 2px solid var(--gold);
 }
 
+/* - soundcloud player - */
+.soundcloud-embed {
+  margin-top: 36px;
+  max-width: 680px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 0 0 6px var(--dark);
+  transition: border-color 0.2s;
+}
+
+.soundcloud-embed:hover {
+  border-color: var(--gold);
+}
+
 .btn-primary { background: var(--gold); color: #000; }
 .btn-primary:hover { background: #e5bf6a; border-color: #e5bf6a; }
 .btn-outline { background: transparent; color: var(--gold); }
