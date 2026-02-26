@@ -195,12 +195,12 @@ section { padding: 80px 24px; }
 
 @media (max-width: 640px) {
     .hero {
-        background-size: 265%; /* zoom in more for small screens */
+        background-size: 265%;
         background-position: center center;
     }
     
     .two-col {
-        grid-template-columns: 1fr; /* your existing rule */
+        grid-template-columns: 1fr;
     }
 }
 
